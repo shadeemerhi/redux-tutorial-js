@@ -1,0 +1,4 @@
+.completed-todos-container {
+  flex: 4;
+  border: 1px solid yellow;
+}
