@@ -8,6 +8,14 @@
   transition: 0.2s ease-in-out;
 }
 
+.title-container {
+  max-width: 70%;
+}
+
+.title-container p {
+  font-size: 12pt;
+}
+
 .todo-item:hover {
   background-color: #dadada;
   cursor: pointer;
