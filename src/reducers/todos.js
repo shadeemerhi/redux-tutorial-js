@@ -8,7 +8,13 @@ import {
 const initialState = [
   {
     id: 1,
-    title: 'Todo Item 1'
+    title: 'Todo Item 1',
+    completed: false
+  },
+  {
+    id: 2,
+    title: 'Todo Item 3',
+    completed: true
   }
 ];
 
