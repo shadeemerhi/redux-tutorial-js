@@ -9,6 +9,7 @@
 .completed-todos-header {
   text-align: center;
   border-radius: 10px 10px 0px 0px;
+  padding: 5px;
   color: white;
   background-color: #4cc978;
 }
