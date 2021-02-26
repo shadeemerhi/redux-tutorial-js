@@ -4,7 +4,9 @@ import '../styles/Todos.css';
 const Todos = () => {
   return (
     <div className="todos-container">
-      <p>Todos Container</p>
+      <div className="todos-header">
+          <p>In Progress</p>
+      </div>
     </div>
   )
 }

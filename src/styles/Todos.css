@@ -1,4 +1,14 @@
 .todos-container {
   flex: 8;
-  border: 1px solid red;
+  margin: 0rem 1rem 0rem 0rem;
+  border-radius: 10px;
+  height: 400px;
+  box-shadow: 1px 4px 5px 2px #ededed;
+}
+
+.todos-header {
+  text-align: center;
+  border-radius: 10px 10px 0px 0px;
+  color: white;
+  background-color: #fcc138;
 }
