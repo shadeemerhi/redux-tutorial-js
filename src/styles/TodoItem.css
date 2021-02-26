@@ -9,11 +9,19 @@
 }
 
 .todo-item:hover {
-  background-color: #c7c7c7;
+  background-color: #dadada;
   cursor: pointer;
 }
 
 .icon {
   margin: 0rem 0.2rem 0rem 0.2rem;
   color: #8f8f8f;
+}
+
+.check-icon:hover {
+  color: #4cc978;
+}
+
+.delete-icon:hover {
+  color: red;
 }
