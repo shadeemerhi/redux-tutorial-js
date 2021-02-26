@@ -7,7 +7,7 @@ import TodoItem from './TodoItem';
 
 const CompletedTodos = () => {
 
-  const completedTodos = useSelector(state => state.todos).filter(todo => todo.completed);
+  const completedTodos = useSelector(state => state.todos.completedTodos);
 
   return (
     <div className="completed-todos-container">

@@ -7,7 +7,7 @@ import TodoItem from './TodoItem';
 
 const Todos = () => {
 
-  const todos = useSelector(state => state.todos).filter(todo => !todo.completed);
+  const todos = useSelector(state => state.todos.inProgressTodos);
 
   return (
     <div className="todos-container">
