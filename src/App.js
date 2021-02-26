@@ -19,7 +19,14 @@ function App() {
 
   useEffect(() => {
     axios.get(`${apiURL}${apiLimit}`).then(res => {
-      setTodos(res.data);
+
+      res.data.forEach(todo => {
+        if(!todo.completed) {
+          setTodos(prev => [...prev, todo]);
+        } else {
+          setCompletedTodos(prev => [...prev, todo]);
+        }
+      });
     })
   }, []);
 
@@ -30,7 +37,7 @@ function App() {
         <AddTodo />
         <div className="todo-container">
           <Todos todos={todos}/>
-          <CompletedTodos />
+          <CompletedTodos todos={completedTodos}/>
         </div>
       </div>
     </div>

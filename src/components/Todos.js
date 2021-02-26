@@ -3,6 +3,7 @@ import TodoItem from './TodoItem';
 import '../styles/Todos.css';
 
 const Todos = (props) => {
+  console.log(props);
   return (
     <div className="todos-container">
       <div className="todos-header">
