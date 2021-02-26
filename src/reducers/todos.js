@@ -5,12 +5,17 @@ import {
   READD_TODO
 } from '../actions/todos';
 
-const initialState = [];
+const initialState = [
+  {
+    id: 1,
+    title: 'Todo Item 1'
+  }
+];
 
 const todosReducer = (state = initialState, action) => {
   switch(action.type) {
     case ADD_TODO:
-      return state;
+      return [...state, action.payload];
     default:
       return state;
   }

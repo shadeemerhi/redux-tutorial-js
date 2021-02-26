@@ -1,15 +1,28 @@
 import React, { useState } from 'react';
-
 import '../styles/AddTodo.css';
+
+import { useSelector, useDispatch } from 'react-redux';
+
+import { addTodo } from '../actions/todos';
 
 const AddTodo = () => {
 
+  const todos = useSelector(state => state.todos);
+  const dispatch = useDispatch();
   const [todoText, setTodoText] = useState('');
 
+
   const handleSubmit = (event) => {
-    console.log(todoText);
     event.preventDefault();
+    if(!todoText) return;
+
+    const newTodo = {
+      id: todos.length + 1,
+      title: todoText
+    }
+
     setTodoText('');
+    dispatch(addTodo(newTodo));
   }
 
   return (

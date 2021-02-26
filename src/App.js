@@ -6,7 +6,7 @@ import AddTodo from './components/AddTodo';
 import Todos from './components/Todos';
 import CompletedTodos from './components/CompletedTodos';
 
-import axios from 'axios';
+// import axios from 'axios';
 
 const todoData = [
   {
@@ -26,8 +26,8 @@ const todoData = [
 
 function App() {
 
-  const apiURL = 'https://jsonplaceholder.typicode.com/todos';
-  const apiLimit = '?_limit=5';
+  // const apiURL = 'https://jsonplaceholder.typicode.com/todos';
+  // const apiLimit = '?_limit=5';
 
   // const [todos, setTodos] = useState([]);
   // const [completedTodos, setCompletedTodos] = useState([]);
@@ -51,7 +51,7 @@ function App() {
       <div className="main-container">
         <AddTodo />
         <div className="todo-container">
-          <Todos todos={todoData}/>
+          <Todos />
           <CompletedTodos />
         </div>
       </div>

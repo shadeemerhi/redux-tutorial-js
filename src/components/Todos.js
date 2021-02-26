@@ -1,16 +1,21 @@
 import React from 'react';
-import TodoItem from './TodoItem';
 import '../styles/Todos.css';
 
-const Todos = (props) => {
-  console.log(props);
+import { useSelector } from 'react-redux';
+
+import TodoItem from './TodoItem';
+
+const Todos = () => {
+
+  const todos = useSelector(state => state.todos);
+  
   return (
     <div className="todos-container">
       <div className="todos-header">
           <p className="title">In Progress</p>
       </div>
       <div>
-        {props.todos.map(todo => {
+        {todos.map(todo => {
           return (
             <TodoItem
               key={todo.id}
