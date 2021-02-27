@@ -35,6 +35,10 @@
   color: red;
 }
 
+.readd-icon:hover {
+  color: #fcc138;
+}
+
 @keyframes fadeIn {
   0% {
     opacity: 0;
