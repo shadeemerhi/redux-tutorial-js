@@ -1,9 +1,7 @@
-import { AcUnitTwoTone } from '@material-ui/icons';
 import {
   ADD_TODO,
-  COMPLETE_TODO,
-  DELETE_TODO,
-  READD_TODO
+  TOGGLE_TODO,
+  DELETE_TODO
 } from '../actions/todos';
 
 const initialState = {
@@ -30,27 +28,28 @@ const todosReducer = (state = initialState, action) => {
         ...state,
         inProgressTodos: [...state.inProgressTodos, action.payload]
       }
-    case COMPLETE_TODO:
-      return {
-        inProgressTodos: state.inProgressTodos.filter(todo => todo.id !== action.payload.id),
-        completedTodos: [...state.completedTodos, 
-          {
-            ...action.payload, 
-            completed: true
-          }
-        ]
+    case TOGGLE_TODO:
+      if(action.payload.completed) {
+        return {
+          completedTodos: state.completedTodos.filter(todo => todo.id !== action.payload.id),
+          inProgressTodos: [...state.inProgressTodos,
+            {
+              ...action.payload,
+              completed: false
+            }
+          ]
+        }
+      } else {
+        return {
+          inProgressTodos: state.inProgressTodos.filter(todo => todo.id !== action.payload.id),
+          completedTodos: [...state.completedTodos, 
+            {
+              ...action.payload, 
+              completed: true
+            }
+          ]
+        }
       }
-    case READD_TODO: {
-      return {
-        completedTodos: state.completedTodos.filter(todo => todo.id !== action.payload.id),
-        inProgressTodos: [...state.inProgressTodos,
-          {
-            ...action.payload,
-            completed: false
-          }
-        ]
-      }
-    }
     case DELETE_TODO: {
       if(action.payload.completed) {
         return {

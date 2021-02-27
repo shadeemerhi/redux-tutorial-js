@@ -4,9 +4,8 @@ import '../styles/TodoItem.css';
 import { useDispatch } from 'react-redux';
 
 import { 
-  completeTodo,
-  deleteTodo,
-  readdTodo
+  toggleTodo,
+  deleteTodo
 } from '../actions/todos';
 
 import CheckCircleIcon from '@material-ui/icons/CheckCircle';
@@ -17,19 +16,13 @@ const TodoItem = React.memo((props) => {
 
   const dispatch = useDispatch();
 
-  const onComplete = () => {
-    dispatch(completeTodo(props));
+  const onToggleCompletionStatus = () => {
+    dispatch(toggleTodo(props));
   }
 
   const onDelete = () => {
     dispatch(deleteTodo(props));
   }
-
-  const onReadd = () => {
-    dispatch(readdTodo(props));
-  }
-
-  console.log('rendering');
 
   return (
     <div className="todo-item">
@@ -41,12 +34,12 @@ const TodoItem = React.memo((props) => {
           (<ReplayIcon 
             fontSize="large" 
             className="icon readd-icon"
-            onClick={onReadd}
+            onClick={onToggleCompletionStatus}
           />) : 
           (<CheckCircleIcon 
-              className="icon check-icon" 
-              fontSize="large"
-              onClick={onComplete}
+            className="icon check-icon" 
+            fontSize="large"
+            onClick={onToggleCompletionStatus}
           />)
         }
         <HighlightOffIcon 
