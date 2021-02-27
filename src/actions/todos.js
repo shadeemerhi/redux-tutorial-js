@@ -10,10 +10,10 @@ export const addTodo = (todo) => {
   }
 }
 
-export const completeTodo = (id) => {
+export const completeTodo = (todo) => {
   return {
     type: COMPLETE_TODO,
-    payloay: id
+    payload: todo
   }
 }
 

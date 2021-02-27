@@ -17,7 +17,7 @@ const AddTodo = () => {
     if(!todoText) return;
 
     const newTodo = {
-      id: todos.length + 1,
+      id: Math.floor(Math.random() * 1000) + 1,
       title: todoText
     }
 

@@ -1,7 +1,7 @@
 import React from 'react';
 import '../styles/TodoItem.css';
 
-// import { useDipatch } from 'react-redux';
+import { useDispatch } from 'react-redux';
 
 import { 
   completeTodo,
@@ -13,17 +13,23 @@ import CheckCircleIcon from '@material-ui/icons/CheckCircle';
 import HighlightOffIcon from '@material-ui/icons/HighlightOff';
 import ReplayIcon from '@material-ui/icons/Replay';
 
-const TodoItem = (props) => {
+const TodoItem = React.memo((props) => {
 
-  // const dispatch = useDipatch();
+  const dispatch = useDispatch();
 
-  // const onComplete = () => {
-  //   dispatch(completeTodo(props.id));
-  // }
+  const onComplete = () => {
+    dispatch(completeTodo(props));
+  }
 
-  // const onDelete = () => {
+  const onDelete = () => {
+    dispatch(deleteTodo(props));
+  }
 
-  // }
+  const onReadd = () => {
+    dispatch(readdTodo(props));
+  }
+
+  console.log('rendering');
 
   return (
     <div className="todo-item">
@@ -32,13 +38,25 @@ const TodoItem = (props) => {
       </div>
       <div className="icon-container">
         {props.completed ? 
-          (<ReplayIcon fontSize="large" className="icon replay-icon"/>) : 
-          (<CheckCircleIcon fontSize="large" className="icon check-icon"/>)
+          (<ReplayIcon 
+            fontSize="large" 
+            className="icon readd-icon"
+            onClick={onReadd}
+          />) : 
+          (<CheckCircleIcon 
+              className="icon check-icon" 
+              fontSize="large"
+              onClick={onComplete}
+          />)
         }
-        <HighlightOffIcon fontSize="large" className="icon delete-icon"/>
+        <HighlightOffIcon 
+          className="icon delete-icon"
+          fontSize="large"
+          onClick={onDelete}
+        />
       </div>
     </div>
   )
-}
+});
 
 export default TodoItem;

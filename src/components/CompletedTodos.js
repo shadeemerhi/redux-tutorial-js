@@ -9,6 +9,7 @@ const CompletedTodos = () => {
 
   const completedTodos = useSelector(state => state.todos.completedTodos);
 
+
   return (
     <div className="completed-todos-container">
       <div className="completed-todos-header">
