@@ -26,25 +26,6 @@ const todoData = [
 
 function App() {
 
-  // const apiURL = 'https://jsonplaceholder.typicode.com/todos';
-  // const apiLimit = '?_limit=5';
-
-  // const [todos, setTodos] = useState([]);
-  // const [completedTodos, setCompletedTodos] = useState([]);
-
-  // useEffect(() => {
-  //   axios.get(`${apiURL}${apiLimit}`).then(res => {
-
-  //     res.data.forEach(todo => {
-  //       if(!todo.completed) {
-  //         setTodos(prev => [...prev, todo]);
-  //       } else {
-  //         setCompletedTodos(prev => [...prev, todo]);
-  //       }
-  //     });
-  //   })
-  // }, []);
-
   return (
     <div className="app">
       <Header />
@@ -53,6 +34,10 @@ function App() {
         <div className="todo-container">
           <Todos />
           {/* <CompletedTodos /> */}
+        </div>
+        <div className="counter-container">
+          <p>Completed</p>
+          <p>{4}</p>
         </div>
       </div>
     </div>

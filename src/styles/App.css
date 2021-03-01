@@ -16,6 +16,16 @@
   display: flex;
 }
 
+.counter-container {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 2rem;
+}
+
+.counter-container p {
+  font-weight: 200;
+}
+
 p {
   margin: 0;
   font-size: 16pt;
