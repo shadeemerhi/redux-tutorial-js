@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react';
 import './styles/App.css';
 
+import { useSelector } from 'react-redux';
+
 import Header from './components/Header'; 
 import AddTodo from './components/AddTodo';
 import Todos from './components/Todos';
@@ -9,6 +11,8 @@ import Todos from './components/Todos';
 
 function App() {
 
+  const counter = useSelector(state => state.counter);
+
   return (
     <div className="app">
       <Header />
@@ -16,11 +20,10 @@ function App() {
         <AddTodo />
         <div className="todo-container">
           <Todos />
-          {/* <CompletedTodos /> */}
         </div>
         <div className="counter-container">
-          <p>Completed</p>
-          <p>{4}</p>
+          <p>Todos Completed</p>
+          <p>{counter}</p>
         </div>
       </div>
     </div>

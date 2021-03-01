@@ -12,7 +12,7 @@ const Todos = () => {
   return (
     <div className="todos-container">
       <div className="todos-header">
-          <p className="title">In Progress</p>
+        <p className="title">In Progress</p>
       </div>
       <div>
         {todos.map(todo => {

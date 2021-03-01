@@ -8,9 +8,10 @@ import {
   completeTodo
 } from '../actions/todos';
 
+import { incrementCounter } from '../actions/counter';
+
 import CheckCircleIcon from '@material-ui/icons/CheckCircle';
 import HighlightOffIcon from '@material-ui/icons/HighlightOff';
-import ReplayIcon from '@material-ui/icons/Replay';
 
 const TodoItem = React.memo((props) => {
 
@@ -22,6 +23,7 @@ const TodoItem = React.memo((props) => {
 
   const onComplete = () => {
     dispatch(completeTodo(props.todo));
+    dispatch(incrementCounter());
   }
 
   return (
