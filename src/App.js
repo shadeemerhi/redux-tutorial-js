@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import './styles/App.css';
 
 import { useSelector } from 'react-redux';
@@ -6,7 +6,6 @@ import { useSelector } from 'react-redux';
 import Header from './components/Header'; 
 import AddTodo from './components/AddTodo';
 import Todos from './components/Todos';
-// import CompletedTodos from './components/CompletedTodos';
 
 
 function App() {
