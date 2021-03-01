@@ -4,24 +4,7 @@ import './styles/App.css';
 import Header from './components/Header'; 
 import AddTodo from './components/AddTodo';
 import Todos from './components/Todos';
-import CompletedTodos from './components/CompletedTodos';
-
-// import axios from 'axios';
-
-const todoData = [
-  {
-    id: 1,
-    title: 'Todo Item 1',
-  },
-  {
-    id: 2,
-    title: 'Todo Item 2',
-  },
-  {
-    id: 3,
-    title: 'Todo Item 3',
-  }
-]
+// import CompletedTodos from './components/CompletedTodos';
 
 
 function App() {
