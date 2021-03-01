@@ -5,7 +5,7 @@ import { useDispatch } from 'react-redux';
 
 import { 
   deleteTodo,
-  completeTodo
+  toggleTodo
 } from '../actions/todos';
 
 import { incrementCounter } from '../actions/counter';
@@ -17,13 +17,20 @@ const TodoItem = React.memo((props) => {
 
   const dispatch = useDispatch();
 
-  const onDelete = () => {
-    dispatch(deleteTodo(props.todo));
-  }
+  // const onDelete = () => {
+  //   dispatch(deleteTodo(props.todo));
+  // }
 
-  const onComplete = () => {
-    dispatch(completeTodo(props.todo));
-    dispatch(incrementCounter());
+  // const onComplete = () => {
+  //   dispatch(completeTodo(props.todo));
+  //   dispatch(incrementCounter());
+  // }
+
+  const onToggleStatus = (markingComplete) => {
+    dispatch(toggleTodo(props.todo));
+    if(markingComplete) {
+      dispatch(incrementCounter());
+    }
   }
 
   return (
@@ -35,12 +42,12 @@ const TodoItem = React.memo((props) => {
         <CheckCircleIcon 
           className="icon check-icon" 
           fontSize="large"
-          onClick={onComplete}
+          onClick={() => onToggleStatus(true)}
         />
         <HighlightOffIcon 
           className="icon delete-icon"
           fontSize="large"
-          onClick={onDelete}
+          onClick={() => onToggleStatus()}
         />
       </div>
     </div>
