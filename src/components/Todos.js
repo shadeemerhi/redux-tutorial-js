@@ -7,8 +7,7 @@ import TodoItem from './TodoItem';
 
 const Todos = () => {
 
-  const todos = useSelector(state => state.todos.inProgressTodos);
-  // console.log(todos);
+  const todos = useSelector(state => state.todos);
 
   return (
     <div className="todos-container">

@@ -4,7 +4,6 @@ import '../styles/TodoItem.css';
 import { useDispatch } from 'react-redux';
 
 import { 
-  toggleTodo,
   deleteTodo
 } from '../actions/todos';
 
@@ -15,10 +14,6 @@ import ReplayIcon from '@material-ui/icons/Replay';
 const TodoItem = React.memo((props) => {
 
   const dispatch = useDispatch();
-
-  const onToggleCompletionStatus = () => {
-    dispatch(toggleTodo(props));
-  }
 
   const onDelete = () => {
     dispatch(deleteTodo(props));
@@ -34,12 +29,12 @@ const TodoItem = React.memo((props) => {
           (<ReplayIcon 
             fontSize="large" 
             className="icon readd-icon"
-            onClick={onToggleCompletionStatus}
+            // onClick={onToggleCompletionStatus}
           />) : 
           (<CheckCircleIcon 
             className="icon check-icon" 
             fontSize="large"
-            onClick={onToggleCompletionStatus}
+            // onClick={onToggleCompletionStatus}
           />)
         }
         <HighlightOffIcon 

@@ -52,7 +52,7 @@ function App() {
         <AddTodo />
         <div className="todo-container">
           <Todos />
-          <CompletedTodos />
+          {/* <CompletedTodos /> */}
         </div>
       </div>
     </div>
