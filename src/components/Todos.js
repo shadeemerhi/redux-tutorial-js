@@ -19,7 +19,7 @@ const Todos = () => {
           return (
             <TodoItem
               key={todo.id}
-              {...todo}
+              todo={todo}
             />
           )
         })}
